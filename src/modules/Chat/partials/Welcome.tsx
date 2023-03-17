@@ -6,7 +6,7 @@ const Welcome = () => {
   return (
     <div className="flex h-screen flex-col gap-3 text-center justify-center">
       <div>
-        <Image src={mainLogo} className="object-cover" width={30} height={40} />
+        <Image src={mainLogo} className="object-cover" width={30} height={40} alt="chat logo" />
       </div>
       <h2 className="text-[36px] font-[600]">Welcome to the new Bing</h2>
       <p className="text-[18px] font-[400]">
