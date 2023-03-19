@@ -1,6 +1,7 @@
 import React from 'react'
 //
 import { ConversationProps } from '@config/types'
+import Texthighlighter from './Texthighlighter'
 
 
 const FromMessage:React.FC<ConversationProps> = ({ response, handleButtonSubmit }) => {
@@ -8,7 +9,7 @@ const FromMessage:React.FC<ConversationProps> = ({ response, handleButtonSubmit 
     <div className='bg-[#ffffff] rounded-lg shadow w-full mt-3'>
       
       {response?.custom && <div className='p-3'>
-         {response.custom.answer}
+         <Texthighlighter highlightRanges={response.custom.highlighted_indices} text={response.custom.answer} />
       </div>}
 
       {response?.text && <div className='p-3'>

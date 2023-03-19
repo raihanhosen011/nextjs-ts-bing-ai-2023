@@ -25,17 +25,17 @@ const Home = () => {
 
     setConversation([...conversation, { sender: "user", response: inputData.title }]);
     setInputData({ title : '', payload : '' })
-    await mutate({ message : inputData.payload }) 
+    await mutate({ message : inputData.payload, sender : {small_id: "110f6497"} }) 
   }
 
   // button submit
   const handleButtonSubmit = async (payload: any) => {
     setConversation([...conversation, { sender: "user", response: payload.title }]);
-    await mutate({ message : payload.payload })
+    await mutate({ message : payload.title, sender : {small_id: "110f6497"} })
   }
 
   const scrollToBottom = () => {
-    messagesRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
   };
 
   // effects
@@ -60,10 +60,10 @@ const Home = () => {
 
 
   return (
-    <div className="container mx-auto" >
+    <div className="container mx-auto" ref={messagesRef} >
       <Welcome />
 
-      <div className="gap-8 pb-[10rem]"  ref={messagesRef} >
+      <div className="gap-8 pb-[10rem]" >
         {conversation.map((message, index) => (
           <div className={`${message.sender === 'user' ? 'user-msg lg:w-1/3 w-full ml-auto' : 'bot-msg w-full lg:w-2/3 order-1'} w-full`} key={index}>
             {message.sender === 'user' ? (
