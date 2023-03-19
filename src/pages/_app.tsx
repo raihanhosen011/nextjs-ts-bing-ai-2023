@@ -1,17 +1,20 @@
 import "../shared/styles/globals.css";
+//
+import { QueryClient, QueryClientProvider } from "react-query";
+//
 import { AppPropsWithLayout } from "@config/types";
-import Layout from "@components/Layout";
+
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout =
-    Component.getLayout ??
-    ((page) => {
-      return <Layout>{page}</Layout>;
-    });
-  return getLayout(
-    <>
+
+  // react query client
+  const queryClient = new QueryClient()
+
+
+  return (
+    <QueryClientProvider client={queryClient}>
       <Component {...pageProps} />
-    </>
+    </QueryClientProvider>
   );
 }
 
