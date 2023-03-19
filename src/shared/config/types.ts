@@ -27,3 +27,19 @@ export type ButtonProps = {
     children?: ReactNode;
     icon ?: string;
 }
+
+
+// chat bar types
+export interface ChatBarProps {
+    handleSubmit : any
+    setInputData : any
+    inputData : any
+}
+
+
+// converstion type
+export interface ConversationProps { 
+    sender ?: string
+    response : any
+    handleButtonSubmit ?: any
+}
