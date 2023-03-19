@@ -19,6 +19,7 @@ const FromMessage:React.FC<ConversationProps> = ({ response, handleButtonSubmit 
         <ul className="flex items-center gap-3 flex-wrap">
           {response.buttons.map((e:any, i:number) => (
               <li 
+                key={i}
                 className="text-sm bg-blue-200 text-blue-800 cursor-pointer px-2 py-1 rounded-md"
                 onClick={() => handleButtonSubmit(e)}
               >
