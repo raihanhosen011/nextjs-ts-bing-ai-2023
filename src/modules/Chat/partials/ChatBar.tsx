@@ -24,7 +24,7 @@ const ChatBar : React.FC<ChatBarProps> = ({ handleSubmit, setInputData, inputDat
           />
 
           {inputData.title.length > 0 && <button
-            className="text-2xl top-3 text-gray-700"
+            className="text-2xl top-3 text-blue-700"
           >
             {icons.send}
           </button>}
