@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { v4 as uuidv4 } from "uuid";
 import React, { FormEvent, useRef, useState } from "react";
 //
 import { usePost } from "@hooks/useFetch";
@@ -10,7 +9,7 @@ import Welcome from "./partials/Welcome";
 import { ConversationProps } from "@config/types";
 
 
-const Home = () => {
+const Home = ({ sender_id } : { sender_id : string }) => {
 
   // states
   const [inputData, setInputData] = useState({ title : '', payload : '' })
@@ -20,8 +19,6 @@ const Home = () => {
   // hooks
   const { mutate, isSuccess, isError, error, isLoading, data } = usePost('webhooks/rest/webhook')
 
-  // sender _id
-  const sender_id = uuidv4().slice(0, 8);
 
   // submit
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
