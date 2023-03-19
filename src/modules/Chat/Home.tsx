@@ -39,7 +39,7 @@ const Home = () => {
   }
 
   const scrollToBottom = () => {
-    messagesRef.current.scrollTop = messagesRef.current.scrollHeight;
+    messagesRef.current?.scrollIntoView({behavior:'smooth'})
   };
 
   // effects
@@ -64,7 +64,7 @@ const Home = () => {
 
 
   return (
-    <div className="container mx-auto" ref={messagesRef} >
+    <div className="container mx-auto" >
       <Welcome />
 
       <div className="gap-8 pb-[10rem]" >
@@ -77,6 +77,8 @@ const Home = () => {
                 <FromMessage response={message.response[0]} handleButtonSubmit={handleButtonSubmit} />
               </>
             )}
+
+            <div ref={messagesRef} />
           </div>
         ))}
 
