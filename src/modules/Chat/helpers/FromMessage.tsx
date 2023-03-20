@@ -7,7 +7,7 @@ import Texthighlighter from './Texthighlighter'
 const FromMessage:React.FC<ConversationProps> = ({ response, handleButtonSubmit }) => {
   return (
     <div className='bg-[#ffffff] rounded-lg shadow w-full mt-3'>
-      
+
       {response?.custom && <div className='p-3'>
          <Texthighlighter highlightRanges={response.custom.highlighted_indices} text={response.custom.answer} />
       </div>}
@@ -21,7 +21,7 @@ const FromMessage:React.FC<ConversationProps> = ({ response, handleButtonSubmit 
           {response.buttons.map((e:any, i:number) => (
               <li 
                 key={i}
-                className="text-sm bg-blue-200 text-blue-800 cursor-pointer px-2 py-1 rounded-md"
+                className="text-sm bg-[#59ffa042] text-[#197f46] font-[500] cursor-pointer px-2 py-1 rounded-md"
                 onClick={() => handleButtonSubmit(e)}
               >
                 {e.title}

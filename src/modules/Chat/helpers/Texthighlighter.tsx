@@ -21,7 +21,7 @@ const TextHighlighter: React.FC<Props> = ({ text, highlightRanges }) => {
       const char = text.charAt(i);
       const isCharHighlighted = isHighlighted(i);
       if (isCharHighlighted) {
-        highlightedText += `<strong>${char}</strong>`;
+        highlightedText += `<strong class='highlight' >${char}</strong>`;
       } else {
         highlightedText += char;
       }
@@ -29,7 +29,7 @@ const TextHighlighter: React.FC<Props> = ({ text, highlightRanges }) => {
     return highlightedText;
   };
 
-  return <p dangerouslySetInnerHTML={{ __html: getHighlightedText() }} />;
+  return <p  dangerouslySetInnerHTML={{ __html: getHighlightedText() }} />;
 };
 
 export default TextHighlighter;

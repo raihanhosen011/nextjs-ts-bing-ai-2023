@@ -6,7 +6,7 @@ import { ChatBarProps } from "@config/types";
 
 const ChatBar : React.FC<ChatBarProps> = ({ handleSubmit, setInputData, inputData }) => {
   return (
-    <div className="fixed bottom-0 flex justify-center items-center text-center w-full left-0 global pb-8 pt-3">
+    <div className="fixed bottom-0 flex justify-center items-center text-center w-full left-0 chat-bar-wrapper pb-8 pt-3">
       <div className="container" >
 
         <form 
@@ -24,7 +24,7 @@ const ChatBar : React.FC<ChatBarProps> = ({ handleSubmit, setInputData, inputDat
           />
 
           {inputData.title.length > 0 && <button
-            className="text-2xl top-3 text-blue-700"
+            className="text-2xl top-3 text-[#25a059]"
           >
             {icons.send}
           </button>}
