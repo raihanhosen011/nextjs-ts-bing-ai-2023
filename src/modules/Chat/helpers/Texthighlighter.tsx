@@ -7,7 +7,7 @@ interface Props {
 
 const TextHighlighter: React.FC<Props> = ({ text, highlightRanges }) => {
   const isHighlighted = (charIndex: number) => {
-    for (let i = 0; i < highlightRanges.length; i++) {
+    for (let i = 0; i < highlightRanges?.length; i++) {
       if (charIndex >= highlightRanges[i][0] && charIndex <= highlightRanges[i][1]) {
         return true;
       }
@@ -17,7 +17,7 @@ const TextHighlighter: React.FC<Props> = ({ text, highlightRanges }) => {
 
   const getHighlightedText = () => {
     let highlightedText = "";
-    for (let i = 0; i < text.length; i++) {
+    for (let i = 0; i < text?.length; i++) {
       const char = text.charAt(i);
       const isCharHighlighted = isHighlighted(i);
       if (isCharHighlighted) {
